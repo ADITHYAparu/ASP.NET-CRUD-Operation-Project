@@ -1,0 +1,37 @@
+﻿@model TaskManager.Models.TaskTable
+
+@{
+    ViewData["Title"] = "Details";
+}
+<style>
+    body{
+        background-color:snow;
+    }
+</style>
+<body>
+<h1>Task Details</h1>
+
+<div>
+    <h4>Task</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+<br />
+<div>
+    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index" class="btn btn-success">Back to List</a>
+</div>
+</body>
